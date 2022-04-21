@@ -26,7 +26,7 @@ app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET')
 
 jwt = JWTManager(app)
 
-cred = credentials.Certificate("D:\\Documents\\LedgerApp\\flask-app\\gitignore\\cred.json")
+cred = credentials.Certificate("gitignore/cred.json")
 
 firebase_app = firebase_admin.initialize_app(cred)
 db = firestore.client()

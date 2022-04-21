@@ -67,7 +67,6 @@ bower_components
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 
 #private gitignored folder
-/gitignore
 
 # Dependency directories
 node_modules/
