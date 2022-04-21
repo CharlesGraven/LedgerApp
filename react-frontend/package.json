@@ -2,8 +2,8 @@
   "name": "react-frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://flask-gpa.herokuapp.com/",
-  "homepage": "https://flask-gpa.herokuapp.com/",
+  "proxy": "http://0.0.0.0:46407",
+  "homepage": ".",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
