@@ -22,7 +22,7 @@ from firebase_admin import credentials, firestore
 
 app = Flask(__name__, static_folder='react-frontend/build', static_url_path='')
 
-app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET')
+app.config["JWT_SECRET_KEY"] = 'dontUseThisOnProd'
 
 jwt = JWTManager(app)
 
