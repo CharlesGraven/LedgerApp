@@ -42,6 +42,7 @@ class Login extends React.Component {
       console.error('Couldnt login user: ' + data.get('username') + ' : ' + response.statusText);
     } else {
       sessionStorage.setItem("token", token.access_token);
+      sessionStorage.setItem("username", data.get('username'));
       this.setState({userName: data.get('username')});
     }
   }

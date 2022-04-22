@@ -91,7 +91,7 @@ class Accounts extends React.Component {
             // Initialize a list of the users accounts
             let accountList = []
 
-            // Get the accound information, parse out the index
+            // Get the account information, parse out the index
             Object.entries(data).map((account) => {
                 return (accountList.push(account[1]));
             });
@@ -122,7 +122,7 @@ class Accounts extends React.Component {
         if (!response.ok) {
             console.error('Couldnt create a transaction: ' + response.statusText);
         }
-
+       
         this.setState({
             accounts: this.state.accounts.concat([data]),
             openModal: false
@@ -146,16 +146,27 @@ class Accounts extends React.Component {
             }
         }
         const response = await fetch("/post_transaction", options);
+        const data = await response.json();
 
+        console.log(JSON.stringify(data));
         // Check the API response
         if (!response.ok) {
             console.error('Couldnt create a transaction: ' + response.statusText);
         }
 
+        // Update the account list so the user can see the state change and notice the transaction
+        const updatedAccountList = this.state.accounts.map((account) => {
+            if(account.account_id === data.account_id) {
+                return data;
+            }
+            return account;
+        });
+
         // Reset the modal state regardless
         this.setState({
             currentAccountId: null,
-            openModal: false
+            openModal: false,
+            accounts: updatedAccountList
         });
     };
 

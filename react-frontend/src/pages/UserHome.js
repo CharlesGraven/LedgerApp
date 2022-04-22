@@ -34,7 +34,7 @@ class UserHome extends React.Component {
         return (
             <div className="row">
                 <div className="sidebar-column" style={{ textAlign: 'center' }}>
-                    <Typography variant="h4" style={{ marginTop: 32 }}>Hi, {this.props.username}!</Typography>
+                    <Typography variant="h4" style={{ marginTop: 32 }}>Hi, {sessionStorage.getItem("username")}!</Typography>
 
                     <div style={{ margin: 24, marginBottom: 12 }}>
                         <Button value="true" onClick={this.changeTab}
